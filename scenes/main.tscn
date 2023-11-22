@@ -1,0 +1,380 @@
+[gd_scene load_steps=12 format=3 uid="uid://b50prig0i2nmn"]
+
+[ext_resource type="Texture2D" uid="uid://cv0ka86wplogd" path="res://texture/Sprite-1000% 1.png" id="1_oggka"]
+[ext_resource type="Texture2D" uid="uid://dar0pnuvq670" path="res://texture/Sprite-button 1000%.png" id="2_qjqoh"]
+[ext_resource type="FontFile" uid="uid://dyppudu63c084" path="res://fonts/Minecraft Rus NEW.otf" id="2_yl1m3"]
+[ext_resource type="Script" path="res://scenes/LabelChanger.cs" id="4_hjsnx"]
+[ext_resource type="Texture2D" uid="uid://dy4ub7fp3qcxd" path="res://texture/Sprite-button2 300%.png" id="4_tiwse"]
+[ext_resource type="PackedScene" uid="uid://bgiepamhamm1" path="res://scenes/sprite_2d.tscn" id="6_ol145"]
+[ext_resource type="AudioStream" uid="uid://qbhmf2rqag8x" path="res://Sounds/MainMenu.wav" id="7_g0e47"]
+
+[sub_resource type="Animation" id="Animation_qoum2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eetq0"]
+resource_name = "showtext"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_m1cvp"]
+resource_name = "showtext_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4oam"]
+_data = {
+"RESET": SubResource("Animation_qoum2"),
+"showtext": SubResource("Animation_eetq0"),
+"showtext_2": SubResource("Animation_m1cvp")
+}
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oggka")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+visibility_layer = 524288
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Выбирите интересующую вас информацию"
+autowrap_mode = 2
+clip_text = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.78
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 20
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Общая
+информация"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Оборудование"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Наше
+обучение"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "пример"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton5" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Пример
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton6" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Пример
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton7" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Виртуальная прогулка
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton8" type="TextureButton" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_qjqoh")
+texture_pressed = ExtResource("4_tiwse")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yl1m3")
+text = "Игра
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+visibility_layer = 524288
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="label" type="RichTextLabel" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_yl1m3")
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("4_hjsnx")
+AnimationPlayerPath = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_s4oam")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Sprite2D" parent="Control" instance=ExtResource("6_ol145")]
+position = Vector2(-211, -223)
+scale = Vector2(2.53646, 2.53646)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_g0e47")
+autoplay = true
+area_mask = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["0"]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton2" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["1"]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton3" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= [2]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton4" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["Info"]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton6" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="infobtn"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton7" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeToScene" binds= [1]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton8" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeToScene" binds= [0]]
