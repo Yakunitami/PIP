@@ -228,7 +228,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_yl1m3")
-text = "пример"
+text = "История создания"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -374,7 +374,7 @@ area_mask = 3
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["0"]]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton2" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["1"]]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton3" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= [2]]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton4" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["Info"]]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton4" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeText" binds= ["3"]]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton6" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="infobtn"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton7" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeToScene" binds= [1]]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TextureButton8" to="MarginContainer/HBoxContainer/TextureRect/MarginContainer/label" method="ChangeToScene" binds= [0]]

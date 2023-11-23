@@ -50,19 +50,19 @@ public partial class game : Control
 
 		_quizQuestions = new QuizQuestion[]
 		{
-			new QuizQuestion("Кто?", new string[] {
-				"я!",
-				"не я()"
-			}, 1),
-			new QuizQuestion("что", new string[] {
-				"я",
-				"не ты"
+			new QuizQuestion("В каком году была создана площадка?", new string[] {
+				"2011",
+				"2015"
 			}, 0),
-			new QuizQuestion("вариант", new string[]
+			new QuizQuestion("Входит ли технопарк в топ 10 технопарков России?", new string[] {
+				"Да!",
+				"Нет"
+			}, 0),
+			new QuizQuestion("Какие технологии присутствуют в нашем технопарке?", new string[]
 			{
-				"правильный ответ",
-				"неправильный ответ"
-			},0)
+				"Бульдозеры",
+				"3D-принтеры"
+			},1)
 		};
 
 		Random rng = new();

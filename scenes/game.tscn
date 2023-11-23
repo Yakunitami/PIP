@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://l54inf0k6t6o"]
+[gd_scene load_steps=12 format=3 uid="uid://l54inf0k6t6o"]
 
 [ext_resource type="Script" path="res://scenes/game.cs" id="1_j1i1x"]
 [ext_resource type="PackedScene" uid="uid://bgiepamhamm1" path="res://scenes/sprite_2d.tscn" id="1_kwg46"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dy4ub7fp3qcxd" path="res://texture/Sprite-button2 300%.png" id="4_ogqui"]
 [ext_resource type="Texture2D" uid="uid://cmyyc7ti12m8k" path="res://texture/Sprite-000rama.png" id="4_sp28y"]
 [ext_resource type="AudioStream" uid="uid://cqxadigku1s4v" path="res://Sounds/КВИЗ.wav" id="8_x3e51"]
+[ext_resource type="Texture2D" uid="uid://balf5g2gnvbqh" path="res://texture/photo_2023-11-23_15-50-38.jpg" id="11_y41fi"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -19,24 +20,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j1i1x")
-QuestionLabelPath = NodePath("TextureRect/VBoxContainer/Label")
-LeftAnswerButtonPath = NodePath("TextureRect/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer")
-RightAnswerButtonPath = NodePath("TextureRect/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer")
+QuestionLabelPath = NodePath("TextureRect/MarginContainer/VBoxContainer/Label")
+LeftAnswerButtonPath = NodePath("TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer")
+RightAnswerButtonPath = NodePath("TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer")
 AnimationPlayerPath = NodePath("Control/Sprite2D/AnimationPlayer")
-LeftAsnwerBtnLabelPath = NodePath("TextureRect/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer/LeftAnswerBtnLabel")
-RightAsnwerBtnLabelPath = NodePath("TextureRect/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer/RightAnswerBtnLabel")
+LeftAsnwerBtnLabelPath = NodePath("TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer/LeftAnswerBtnLabel")
+RightAsnwerBtnLabelPath = NodePath("TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer/RightAnswerBtnLabel")
 SoundPlayerPath = NodePath("SoundPlayer")
 correctSound = ExtResource("2_swfld")
 incorrectSound = ExtResource("3_gj7jp")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.588235, 0.596078, 0.623529, 1)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
@@ -68,51 +60,51 @@ offset_right = 1069.0
 offset_bottom = 454.0
 texture = ExtResource("4_sp28y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.5
+size_flags_stretch_ratio = 2.43
 theme_override_fonts/font = ExtResource("3_d51qn")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Здесь будет вопрос!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.56
-theme_override_constants/margin_left = 75
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 75
-theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 75
 
-[node name="LeftAnswer" type="TextureButton" parent="TextureRect/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="LeftAnswer" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_lqwpw")
 texture_pressed = ExtResource("4_ogqui")
 stretch_mode = 0
 
-[node name="LeftAnswerBtnLabel" type="Label" parent="TextureRect/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer"]
+[node name="LeftAnswerBtnLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,14 +123,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="RightAnswer" type="TextureButton" parent="TextureRect/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="RightAnswer" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_lqwpw")
 texture_pressed = ExtResource("4_ogqui")
 stretch_mode = 0
 
-[node name="RightAnswerBtnLabel" type="Label" parent="TextureRect/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer"]
+[node name="RightAnswerBtnLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -164,8 +156,15 @@ autoplay = true
 
 [node name="SoundPlayer" type="AudioStreamPlayer2D" parent="."]
 
+[node name="Photo2023-11-2315-50-38" type="Sprite2D" parent="."]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+z_index = -1
+position = Vector2(582.5, 327.5)
+scale = Vector2(9.10156, 10.1719)
+texture = ExtResource("11_y41fi")
+
 [connection signal="pressed" from="TextureButton" to="." method="GoBack"]
-[connection signal="pressed" from="TextureRect/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer" to="." method="SubmitAnswer" binds= [0]]
-[connection signal="pressed" from="TextureRect/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer" to="." method="SubmitAnswer" binds= [1]]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/LeftAnswer" to="." method="SubmitAnswer" binds= [0]]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/RightAnswer" to="." method="SubmitAnswer" binds= [1]]
 
 [editable path="Control/Sprite2D"]

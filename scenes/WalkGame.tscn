@@ -1,12 +1,13 @@
-[gd_scene load_steps=40 format=3 uid="uid://c85m5hrsax42i"]
+[gd_scene load_steps=59 format=3 uid="uid://c85m5hrsax42i"]
 
+[ext_resource type="Texture2D" uid="uid://ccwt1lx1uf0sg" path="res://texture/lab_back.png" id="1_rekw5"]
 [ext_resource type="Script" path="res://scripts/CharacterController.cs" id="1_shgym"]
 [ext_resource type="Texture2D" uid="uid://cw7k2lg1wy3e5" path="res://texture/Sprite-0010.png" id="2_7ctro"]
-[ext_resource type="Texture2D" uid="uid://cmyyc7ti12m8k" path="res://texture/Sprite-000rama.png" id="2_bk2du"]
 [ext_resource type="Texture2D" uid="uid://ga3fsrnk0dew" path="res://texture/computer.png" id="3_ihfb7"]
 [ext_resource type="FontFile" uid="uid://dyppudu63c084" path="res://fonts/Minecraft Rus NEW.otf" id="4_l3x4a"]
 [ext_resource type="Texture2D" uid="uid://em4q0pbvnt25" path="res://texture/Sprite_Peep_head.png" id="5_fnfut"]
 [ext_resource type="Texture2D" uid="uid://b0l4d8hiqu27a" path="res://texture/Sprite-robot-Sheet.png" id="5_l5icg"]
+[ext_resource type="Texture2D" uid="uid://dlg4d8mn68rq7" path="res://texture/floar_lab.png" id="6_f2spv"]
 [ext_resource type="Texture2D" uid="uid://b4gppf7qpwhhw" path="res://texture/Sprite_Peep_right_hand.png" id="6_o4s8q"]
 [ext_resource type="Texture2D" uid="uid://cy0rqoisjh5jw" path="res://texture/Sprite_Peep_left_hand.png" id="7_uhbdy"]
 [ext_resource type="Texture2D" uid="uid://deny3qrs00ypf" path="res://texture/Sprite_legs_Sheet.png" id="8_tmpcy"]
@@ -15,8 +16,40 @@
 [ext_resource type="Texture2D" uid="uid://ckora84r3jj32" path="res://texture/floar.png" id="11_8upus"]
 [ext_resource type="Texture2D" uid="uid://dglsddnrlkdwm" path="res://texture/Background.png" id="12_v7frg"]
 [ext_resource type="Texture2D" uid="uid://bxgtswwx5lhwh" path="res://texture/pes.png" id="13_c3nga"]
+[ext_resource type="Texture2D" uid="uid://dwloty3lm7jxg" path="res://texture/Sprite-protable_ефиду2.png" id="13_n8avp"]
 [ext_resource type="Texture2D" uid="uid://obgyxevq4frk" path="res://texture/Robot2_sprite.png" id="14_07dq2"]
+[ext_resource type="Texture2D" uid="uid://x41ykndaalln" path="res://texture/Sprite-1table.png" id="14_60s41"]
 [ext_resource type="Texture2D" uid="uid://s6lcxckne78f" path="res://texture/robotclener.png" id="15_6c45f"]
+[ext_resource type="Texture2D" uid="uid://bllsg0qjubwhe" path="res://texture/flasks.png" id="15_euaxq"]
+[ext_resource type="Texture2D" uid="uid://b15mx41s4qkko" path="res://texture/poison.png" id="16_d5m8x"]
+[ext_resource type="Texture2D" uid="uid://n7ao7112ynqw" path="res://texture/scoop.png" id="17_30e00"]
+[ext_resource type="Texture2D" uid="uid://c8gwc2richcq" path="res://texture/Sprite_door.png" id="18_b2tov"]
+[ext_resource type="Texture2D" uid="uid://ciudtbfw2chuq" path="res://texture/Sprite-frige.png" id="18_mcg7f"]
+[ext_resource type="Texture2D" uid="uid://bk8mqcoclqtbt" path="res://texture/door_down.png" id="19_tocxg"]
+[ext_resource type="Texture2D" uid="uid://dv7nmseggtcp7" path="res://texture/door_up.png" id="20_ynkxv"]
+[ext_resource type="Texture2D" uid="uid://cd4gm7wosiefl" path="res://texture/beginig_back.png" id="22_nxs3e"]
+[ext_resource type="Texture2D" uid="uid://uhfo863llwto" path="res://texture/door_lab_up2.png" id="23_rkngv"]
+[ext_resource type="Texture2D" uid="uid://xkatupunl4nl" path="res://texture/door_lab_down2.png" id="24_aaqdg"]
+[ext_resource type="Texture2D" uid="uid://bwr22yo10wxs" path="res://texture/dialog_window.png" id="25_3g06j"]
+[ext_resource type="Texture2D" uid="uid://d0ek5ap2nhktp" path="res://texture/desk_sprite.png" id="31_m8cej"]
+[ext_resource type="Texture2D" uid="uid://d2le7oph4dwng" path="res://texture/Sprite-stend.png" id="32_mu2yi"]
+[ext_resource type="Texture2D" uid="uid://cnvt3mggxroci" path="res://texture/Sprite-sten+halat.png" id="33_st5x5"]
+[ext_resource type="PackedScene" uid="uid://bjdqq82hq2ya" path="res://texture/robot_machine.tscn" id="34_i2qoq"]
+
+[sub_resource type="Animation" id="Animation_hk8xs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_uu1el"]
 resource_name = "new_animation"
@@ -36,26 +69,17 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
 
-[sub_resource type="Animation" id="Animation_hk8xs"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tnore"]
 _data = {
 "RESET": SubResource("Animation_hk8xs"),
 "new_animation": SubResource("Animation_uu1el")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcf21"]
+size = Vector2(129, 663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5qau"]
+size = Vector2(21.4756, 31.24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30sh8"]
 size = Vector2(198, 188)
@@ -636,98 +660,40 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcf21"]
-size = Vector2(129, 663)
-
 [node name="Node2D" type="Node2D"]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = -1
-scroll_base_offset = Vector2(1, 1)
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = 1
-motion_scale = Vector2(0.8, 0.8)
-
-[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(2163, 263)
-scale = Vector2(15.3125, 7.09375)
-texture = ExtResource("12_v7frg")
-
-[node name="Computer4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.592157, 0.592157, 0.592157, 1)
-position = Vector2(2630, 404)
-scale = Vector2(6.6875, 6.6875)
-texture = ExtResource("3_ihfb7")
-
-[node name="Computer5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.592157, 0.592157, 0.592157, 1)
-position = Vector2(2963, 404)
-scale = Vector2(6.6875, 6.6875)
-texture = ExtResource("3_ihfb7")
-
-[node name="Computer6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.592157, 0.592157, 0.592157, 1)
-position = Vector2(2796, 404)
-scale = Vector2(6.6875, 6.6875)
-texture = ExtResource("3_ihfb7")
-
-[node name="Robot2Sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-z_index = 200
-position = Vector2(1781, 393)
-scale = Vector2(4.09375, 4.09375)
-texture = ExtResource("14_07dq2")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = 1
-motion_scale = Vector2(0.85, 0.85)
-
-[node name="Computer" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-modulate = Color(0.858824, 0.858824, 0.858824, 1)
-position = Vector2(2655, 434)
-scale = Vector2(6.6875, 6.6875)
-texture = ExtResource("3_ihfb7")
-
-[node name="Computer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-modulate = Color(0.858824, 0.858824, 0.858824, 1)
-position = Vector2(2988, 434)
-scale = Vector2(6.6875, 6.6875)
-texture = ExtResource("3_ihfb7")
-
-[node name="Computer3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-modulate = Color(0.858824, 0.858824, 0.858824, 1)
-position = Vector2(2821, 434)
-scale = Vector2(6.6875, 6.6875)
-texture = ExtResource("3_ihfb7")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="Floar" type="Sprite2D" parent="CanvasGroup"]
-z_index = -2
-position = Vector2(2095, 554)
+z_index = -5
+z_as_relative = false
+position = Vector2(2109, 586)
 scale = Vector2(19.6875, 13.623)
 texture = ExtResource("11_8upus")
 
 [node name="Floar2" type="Sprite2D" parent="CanvasGroup"]
-z_index = -2
-position = Vector2(-109, 554)
+z_index = -5
+z_as_relative = false
+position = Vector2(1003, 743)
 scale = Vector2(19.6875, 13.623)
 texture = ExtResource("11_8upus")
-
-[node name="Floar3" type="Sprite2D" parent="CanvasGroup"]
-z_index = -2
-position = Vector2(6462, 553.875)
-scale = Vector2(19.6875, 13.623)
-texture = ExtResource("11_8upus")
+offset = Vector2(-55.7714, -11.5246)
 
 [node name="Floar4" type="Sprite2D" parent="CanvasGroup"]
-z_index = -2
-position = Vector2(4258, 553.875)
-scale = Vector2(19.6875, 13.623)
+z_index = -5
+z_as_relative = false
+position = Vector2(3612, 585.875)
+scale = Vector2(9.375, 13.623)
 texture = ExtResource("11_8upus")
 
+[node name="FloarLab" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(4545.25, 485)
+scale = Vector2(10.3398, 10.4258)
+texture = ExtResource("6_f2spv")
+
 [node name="Pes" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(1268, 449)
+visibility_layer = 2
+position = Vector2(1731, 428)
 scale = Vector2(4.45312, 4.45312)
 texture = ExtResource("13_c3nga")
 
@@ -743,6 +709,175 @@ libraries = {
 "": SubResource("AnimationLibrary_tnore")
 }
 
+[node name="DoorDown" type="Sprite2D" parent="CanvasGroup"]
+visible = false
+z_index = -1
+position = Vector2(3873, 400)
+scale = Vector2(10, 10)
+texture = ExtResource("19_tocxg")
+
+[node name="DoorUp" type="Sprite2D" parent="CanvasGroup"]
+visible = false
+z_index = 100
+position = Vector2(3950, 384)
+scale = Vector2(10, 10)
+texture = ExtResource("20_ynkxv")
+
+[node name="FloarLab2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(5228, 485)
+scale = Vector2(10.3398, 10.4258)
+texture = ExtResource("6_f2spv")
+
+[node name="FloarLab3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(5865, 484)
+scale = Vector2(10.3398, 10.4258)
+texture = ExtResource("6_f2spv")
+
+[node name="FloarLab4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(6525, 486)
+scale = Vector2(10.3398, 10.4258)
+texture = ExtResource("6_f2spv")
+
+[node name="DoorLabUp2" type="Sprite2D" parent="CanvasGroup"]
+z_index = 1
+position = Vector2(4594, 463)
+scale = Vector2(11, 11)
+texture = ExtResource("23_rkngv")
+
+[node name="DoorLabDown2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(4588, 471)
+scale = Vector2(11, 11)
+texture = ExtResource("24_aaqdg")
+
+[node name="LabBack" type="Sprite2D" parent="CanvasGroup"]
+z_index = -10
+position = Vector2(5070.88, 258.5)
+scale = Vector2(30.2832, 7.29688)
+texture = ExtResource("1_rekw5")
+
+[node name="Background" type="Sprite2D" parent="CanvasGroup"]
+z_index = -1
+position = Vector2(2712.5, 260.5)
+scale = Vector2(23.8984, 7.35938)
+texture = ExtResource("12_v7frg")
+
+[node name="Computer4" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+position = Vector2(2505, 404)
+scale = Vector2(6.6875, 6.6875)
+texture = ExtResource("3_ihfb7")
+
+[node name="Computer5" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+position = Vector2(2838, 404)
+scale = Vector2(6.6875, 6.6875)
+texture = ExtResource("3_ihfb7")
+
+[node name="Computer6" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+position = Vector2(2671, 404)
+scale = Vector2(6.6875, 6.6875)
+texture = ExtResource("3_ihfb7")
+
+[node name="Robot2Sprite" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(3513, 431)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("14_07dq2")
+
+[node name="Computer" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0.858824, 0.858824, 0.858824, 1)
+position = Vector2(2538, 434)
+scale = Vector2(6.6875, 6.6875)
+texture = ExtResource("3_ihfb7")
+
+[node name="Computer2" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0.858824, 0.858824, 0.858824, 1)
+position = Vector2(2871, 434)
+scale = Vector2(6.6875, 6.6875)
+texture = ExtResource("3_ihfb7")
+
+[node name="Computer3" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0.858824, 0.858824, 0.858824, 1)
+position = Vector2(2704, 434)
+scale = Vector2(6.6875, 6.6875)
+texture = ExtResource("3_ihfb7")
+
+[node name="Sprite-protableЕфиду2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(4650, 429)
+scale = Vector2(10.3281, 11.9492)
+texture = ExtResource("13_n8avp")
+
+[node name="Sprite-1Table" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(5044.5, 457)
+scale = Vector2(12.9531, 12.5313)
+texture = ExtResource("14_60s41")
+
+[node name="Flasks" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(4991, 362)
+scale = Vector2(3.8125, 3.8125)
+texture = ExtResource("15_euaxq")
+
+[node name="Poison" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(5104, 360)
+scale = Vector2(4.16406, 4.16406)
+texture = ExtResource("16_d5m8x")
+
+[node name="Scoop" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(4720, 356)
+scale = Vector2(4.89062, 4.89062)
+texture = ExtResource("17_30e00")
+
+[node name="Sprite-frige" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(5290, 413)
+scale = Vector2(8.31249, 8.31249)
+texture = ExtResource("18_mcg7f")
+
+[node name="DeskSprite" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(5995, 444)
+scale = Vector2(3.21094, 3.21094)
+texture = ExtResource("31_m8cej")
+
+[node name="Sprite-stend" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(6612, 441)
+scale = Vector2(12.7187, 12.7187)
+texture = ExtResource("32_mu2yi")
+
+[node name="Sprite-sten+halat" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(6577, 437)
+scale = Vector2(12.9375, 12.9375)
+texture = ExtResource("33_st5x5")
+
+[node name="BeginigBack" type="Sprite2D" parent="CanvasGroup"]
+z_index = -2
+position = Vector2(69.4999, 261.75)
+scale = Vector2(17.5859, 7.39844)
+texture = ExtResource("22_nxs3e")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1134, 328)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_lcf21")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Robotclener" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1295, 599)
+scale = Vector2(5.95313, 5.95313)
+texture = ExtResource("15_6c45f")
+
+[node name="SpriteDoor" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(276, 422)
+scale = Vector2(9.93408, 9.93408)
+texture = ExtResource("18_b2tov")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SpriteDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteDoor/StaticBody2D"]
+position = Vector2(1.54311, 5.62)
+shape = SubResource("RectangleShape2D_w5qau")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(614, 540)
 script = ExtResource("1_shgym")
@@ -754,22 +889,12 @@ TextureRectPath = NodePath("TextureRect")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_30sh8")
 
-[node name="TextureButton" type="TextureButton" parent="CharacterBody2D"]
-offset_left = -411.0
-offset_top = -492.0
-offset_right = -314.0
-offset_bottom = -395.0
-texture_normal = ExtResource("2_7ctro")
-stretch_mode = 0
-
 [node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
-visible = false
-offset_left = -245.0
-offset_top = -486.0
-offset_right = 300.0
-offset_bottom = -183.0
-texture = ExtResource("2_bk2du")
-expand_mode = 1
+offset_left = -72.0
+offset_top = -473.0
+offset_right = 473.0
+offset_bottom = -33.0
+texture = ExtResource("25_3g06j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/TextureRect"]
 libraries = {
@@ -783,14 +908,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -247.5
-offset_top = -121.5
-offset_right = 247.5
-offset_bottom = 121.5
+offset_left = -145.5
+offset_top = -90.0
+offset_right = 176.5
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_l3x4a")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -799,6 +925,7 @@ visible_ratio = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(100, -170)
+limit_right = 6800
 
 [node name="peepSprites" type="Node2D" parent="CharacterBody2D"]
 position = Vector2(-1, -35)
@@ -838,17 +965,42 @@ texture = ExtResource("9_ppbcx")
 [node name="Body" type="Sprite2D" parent="CharacterBody2D/peepSprites"]
 texture = ExtResource("10_y5irs")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1134, 328)
+[node name="DoorLabUp2" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(8414, 435.406)
+scale = Vector2(32.6738, 12.0874)
+texture = ExtResource("23_rkngv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="DoorLabUp2"]
+position = Vector2(-36.4512, 6.08847)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLabUp2/StaticBody2D"]
+position = Vector2(1.54311, 5.62)
+shape = SubResource("RectangleShape2D_w5qau")
+
+[node name="robotMachine" parent="." instance=ExtResource("34_i2qoq")]
+z_index = -1
+position = Vector2(3392, 478)
+scale = Vector2(4, 4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+z_index = 2
+offset_left = 42.0
+offset_right = 139.0
+offset_bottom = 97.0
+texture_normal = ExtResource("2_7ctro")
+stretch_mode = 0
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(4140, 328)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-39, 0)
 shape = SubResource("RectangleShape2D_lcf21")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Robotclener" type="Sprite2D" parent="."]
-position = Vector2(1295, 599)
-scale = Vector2(5.95313, 5.95313)
-texture = ExtResource("15_6c45f")
-
-[connection signal="pressed" from="CharacterBody2D/TextureButton" to="CharacterBody2D" method="GoBack"]
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="OnFirstRoomEntered" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="CharacterBody2D" method="GoBack"]
+[connection signal="body_entered" from="Area2D2" to="CharacterBody2D" method="OnFirstRoomEntered" binds= [1]]

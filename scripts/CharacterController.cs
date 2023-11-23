@@ -15,7 +15,7 @@ public partial class CharacterController : CharacterBody2D
 	private TextureRect _textureRect;
 	private AnimationPlayer _playerAnimationPlayer;
 	private AnimationPlayer _animationPlayer;
-	public const float Speed = 150.0f;
+	public const float Speed = 450.0f;
 	
 	public override void _Ready()
 	{
@@ -32,7 +32,7 @@ public partial class CharacterController : CharacterBody2D
 			_label.Text = ModuleTexts.GetModuleTextFromId(id);
 			_animationPlayer.Stop();
         	_animationPlayer.Play("showtext_2");
-			//_textureRect.Visible = true;
+			_textureRect.Visible = true;
     }
 	
 

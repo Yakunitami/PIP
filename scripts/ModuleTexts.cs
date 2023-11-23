@@ -1,7 +1,7 @@
 public static class ModuleTexts
-{
-  private static string s_first = "Добро пожаловать в отдел робототехники, тут вы можете увидеть...";  
-  private static string s_second = "Наш технопарк оборудован современными технологиями, такими как 3D-принтеры, интерактивные доски, робототехника...";
+{    
+  private static string s_first = "Добро пожаловать в отдел робототехники, здесь специалисты разрабатывают и создают проекты Искуственного Интелекта";  
+  private static string s_second = "Это отдел биотехнологии, основной целью которого является промышленное использование биологических процессов";
   private static string s_notFound = "Placeholder";
 
   public enum ModuleVariant
